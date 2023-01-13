@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct no{
+    int info;
+    struct no *prox;
+}no;
+
+no *inicioL; 
+
+void inicializarLista(){
+    inicioL = NULL;
+}
+
+int listaVazia(){
+    if(inicioL == NULL)
+    return 1;
+
+    return 0; //else
+}
+
+void insereNoFinal(int valor){
+    no *aux, *p;
+    aux = (no*)malloc(sizeof(no));
+    if(aux!=NULL){
+        aux->info = valor;
+        aux->prox = NULL;
+        if(!listaVazia()){
+            p = inicioL;
+            while(p -> prox!= NULL){
+                p = p->prox;
+            }
+            p->prox = aux;
+        }
+        else{
+            inicioL = aux;
+        }
+    }
+}
+
+void percorrer(){
+    no *aux;
+    if(!listaVazia()){
+        aux = inicioL;
+        while(aux!=NULL){
+            printf("%d", aux -> info);
+            aux = aux->prox;
+        }
+    }
+    else
+    printf("\nLista vazia!");
+}
+
+no* buscaElem(int valor){
+    no *aux;
+    aux = inicioL;
+    if(!listaVazia()){
+        //procurar pelo elemento
+        while(aux!=NULL && aux->info!=valor){
+            aux = aux->prox;
+        }
+        return aux;
+    }
+    else{
+        printf("Lista vazia");
+    }
+}
+
+
+int main()
+{
+    int valor;// opcao;
+    inicializarLista();
+    insereNoFinal(1);
+    insereNoFinal(6);
+    insereNoFinal(9);
+    insereNoFinal(15);
+    percorrer();
+    printf("\n");
+    printf("O elemento está na posição %p", buscaElem(9));
+
+    return 0;
+}
