@@ -54,25 +54,6 @@ void percorrer(){
     printf("\nLista vazia!");
 }
 
-void insereNoFinal(int valor){
-    no *aux, *p;
-    aux = (no*)malloc(sizeof(no));
-    if(aux!=NULL){
-        aux->info = valor;
-        aux->prox = NULL;
-        if(!listaVazia()){
-            p = inicioL;
-            while(p -> prox!= NULL){
-                p = p->prox;
-            }
-            p->prox = aux;
-        }
-        else{
-            inicioL = aux;
-        }
-    }
-}
-
 int main(){
     int valor, opcao;
     inicializarLista();
