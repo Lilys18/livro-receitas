@@ -72,7 +72,18 @@ void percorrerDireita(){
 }
 
 no* buscaElem(int valor){
-    
+    no *aux;
+    aux = inicioE;
+    if(!listaVazia()){
+        //procurar pelo elemento
+        while(aux!=NULL && aux->info!=valor){
+            aux = aux->prox;
+        }
+        return aux;
+    }
+    else{
+        printf("Lista vazia");
+    }
 }
 
 void remover(int valor){
@@ -126,9 +137,9 @@ int main()
     percorrerEsquerda();
     printf("\nPercorrer direita: ");
     percorrerDireita();
-    printf("Digite o elemento procurado: ");
+    printf("\nDigite o elemento procurado: ");
     scanf("%d", &valor);
-    printf("Deseja excluir esse elemento?\n 1-Sim\n2-Não\n->");
+    printf("Deseja excluir esse elemento?\n1-Sim\n2-Não\n->");
     scanf("%d", &opcao);
     if(opcao == 1){
         remover(valor);
