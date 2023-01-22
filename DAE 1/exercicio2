@@ -156,7 +156,7 @@ int main(){
                     printf("Lista vazia!");
                 break;
             case 4:
-                if(!listaVazia){
+                if(!listaVazia()){
                     printf("Insira valor que deseja remover: ");
                     scanf("%d", &valor);
                     remover(valor);
