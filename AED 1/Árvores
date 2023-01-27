@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct no{
+    int info;
+    struct no *esq, *dir;
+}no;
+
+no *raiz
+
+no* inicializarArv(){
+    return NULL;
+}
+
+no* criaNo(int valor){
+    no* aux = (no*)malloc(sizeof(no));
+    if(aux!=NULL){
+        aux->info = valor;
+        aux->esq = NULL
+        aux->dir = NULL;
+    }
+    return aux;
+}
+
+no* inserir(int valor){
+    if(aux==NULL){   //lista vazia
+        raiz = aux;
+    }    
+    else{
+        no* aux2 = raiz; //variavel para percorrer a arvore
+        while(aux2->esq!NULL && aux2->dir!=NULL){
+            aux2 = aux2->esq;
+        }
+        if(aux2->esq==NULL)
+            aux2->esq = aux;
+        else
+            aux2->dir = aux;
+    }
+
+void percorrePreOrdem(no *raiz){
+    if(aux!=NULL){
+        printf("%d", raiz->info);
+        percorrePreOrdem(raiz->esq);
+        percorrePreOrdem(raiz->dir);
+    }
+}
+
+void percorreEmOrdem(no *raiz){
+    if(aux!=NULL){
+        percorreEmOrdem(raiz->esq);
+        printf("%d", raiz->info);
+        percorreEmOrdem(raiz->dir);
+    }
+}
+
+void percorrePosOrdem(no *raiz){
+    if(aux!=NULL){
+        percorrePosOrdem(raiz->esq);
+        percorrePosOrdem(raiz->dir);
+        printf("%d", raiz->info);
+    }
+}
+
+int main(){
+    int opcao, valor;
+    printf("Árvore Binária");
+    printf("Digite sua escolha:\n1-Inserir valor;\n");
+    printf("2-Buscar valor;\n3-Exibir valores.\n-> ");
+    scanf("%d", &opcao);
+    switch (variável){
+        case 1:
+            printf("Insira valor: ");
+        break;
+
+        case 2:
+        break;
+        
+        case 3:
+        break;
+
+        default:
+            printf("Opção inválida!");
+}
