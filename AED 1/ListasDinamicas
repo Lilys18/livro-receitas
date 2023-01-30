@@ -46,7 +46,7 @@ void percorrer(){
     if(!listaVazia()){
         aux = inicioL;
         while(aux!=NULL){
-            printf("%d", aux -> info);
+            printf("%d", aux->info);
             aux = aux->prox;
         }
     }
@@ -59,12 +59,12 @@ int main(){
     inicializarLista();
     do{
         printf("\n1-Inserir pelo início.\n2-Percorrer.\n3-Sair");
-        printf("Informe a opção: ");
+        printf("\nDigite sua escolha: ");
         scanf("%d", &opcao);
         if(opcao!=1 && opcao!=2 && opcao!=3)
         printf("Opção inválida.");
         else{
-            if(opcao = 1){
+            if(opcao==1){
                 printf("Insira valor: ");
                 scanf("%d", &valor);
                 insereNoInicio(valor);
@@ -76,7 +76,7 @@ int main(){
                     printf("\nEncerrando...");
             }
         }
-    }while(opcao=!3);
+    }while(opcao!=3);
 
 return 0;
 }
