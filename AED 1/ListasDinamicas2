@@ -73,7 +73,7 @@ void insereNoFinal(int valor){
     }
 }
 
-void removeNoMeio(int valor){
+void removeElem(int valor){
     no *ant, *aux;
     aux = inicioL;
     ant = NULL;
@@ -109,7 +109,7 @@ int main(){
     insereNoFinal(9);
     insereNoFinal(15);
     percorrer();
-    removeNoMeio(9);
+    removeElem(6);
     printf("\n");
     percorrer();
 
