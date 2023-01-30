@@ -77,38 +77,42 @@ int main(){
     inicializarArv();
     no *raiz;
     printf("Árvore Binária");
-    printf("Digite sua escolha:\n1-Inserir valor;\n");
-    printf("2-Buscar valor;\n3-Exibir valores.\n-> ");
+    printf("\nDigite sua escolha:\n1-Inserir valor;\n");
+    printf("2-Buscar valor;\n3-Exibir valores;\n4-Sair.\n-> ");
     scanf("%d", &opcao1);
-    switch (opcao1){
-        case 1:
-            printf("Insira valor: ");
-            scanf("%d", &valor);
-            inserir(valor);
-        break;
+    while(opcao1!=4){
+        switch (opcao1){
+            case 1:
+                printf("Insira valor: ");
+                scanf("%d", &valor);
+                inserir(valor);
+            break;
 
-        case 2:
+            case 2:
             
             
             
-        break;
+            break;
         
-        case 3:
-            printf("Insira de que modo deseja percorrer a árvore: ");
-            printf("1-Pre Ordem;\n2-Em Ordem;\n3-Pós Ordem\n-> ");
-            scanf("%d", &opcao2);
-            switch (opcao2){
-                case 1:
-                    percorrePreOrdem(raiz);
-                case 2:
-                    percorreEmOrdem(raiz);
-                case 3:
-                    percorrePosOrdem(raiz);
-            }
+            case 3:
+                printf("Insira de que modo deseja percorrer a árvore: ");
+                printf("\n1-Pre Ordem;\n2-Em Ordem;\n3-Pós Ordem\n-> ");
+                scanf("%d", &opcao2);
+                switch (opcao2){
+                    case 1:
+                        percorrePreOrdem(raiz);
+                    case 2:
+                        percorreEmOrdem(raiz);
+                    case 3:
+                        percorrePosOrdem(raiz);
+                }
         break;
 
         default:
             printf("Opção inválida!");
+        }
+        printf("\nDigite sua escolha: ");
+        scanf("%d", &opcao1);
     }
     return 0;
 }
